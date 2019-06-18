@@ -33,12 +33,8 @@ Page({
   },
 
   addToAgent: function(){
-    var user = wx.getStorageSync('user');
-    var userInfo = wx.getStorageSync('userInfo');
-    console.log(app.globalData.userInfo.nickName, app.globalData.userInfo.avatarUrl)
+    console.log(app.globalData.userInfo.nickName, app.globalData.userInfo.avatarUrl, app.globalData.openId)
     console.log("add:", this.data.name, this.data.desc, this.data.price, this.data.phonenum)
-    console.log(user.openid)
-    console.log(userInfo.avatarUrl, userInfo.nickName)
     /*wx.request({
       url: 'http://47.95.237.94:8001/api/v1/goods/add' + username,
       data:{
