@@ -5,42 +5,88 @@ Page({
     name: '',
     desc: '',
     price: '',
-    phonenum: ''
+    phonenum: '',
+    pictures: []
   },
 
-  nameChange: function(e){
+  nameChange: function(e) {
     this.setData({
       name: e.detail.value
     })
   },
 
-  descChange: function (e) {
+  descChange: function(e) {
     this.setData({
       desc: e.detail.value
     })
   },
 
-  priceChange: function (e) {
+  priceChange: function(e) {
     this.setData({
       price: e.detail.value
     })
   },
 
-  phoneChange: function (e) {
+  phoneChange: function(e) {
     this.setData({
       phonenum: e.detail.value
     })
   },
 
-  addToAgent: function(){
+  addPicture(e) {
+    wx.chooseImage({
+      count: 4,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success: res => {
+        const images = this.data.pictures.concat(res.tempFilePaths)
+        this.setData({
+          pictures: images
+        })
+      },
+    })
+  },
+
+  removeImage(e) {
+    const idx = e.target.dataset.idx
+    this.data.pictures.splice(idx, 1)
+    this.setData({
+      pictures: this.data.pictures.splice(idx, 1)
+    })
+  },
+
+  handleImagePreview(e) {
+    const idx = e.target.dataset.idx
+    const images = this.data.pictures
+    wx.previewImage({
+      current: images[idx],  //当前预览的图片
+      urls: images,  //所有要预览的图片
+    })
+  },
+
+  addToAgent: function() {
     console.log(app.globalData.userInfo.nickName, app.globalData.userInfo.avatarUrl, app.globalData.openId)
     console.log("add:", this.data.name, this.data.desc, this.data.price, this.data.phonenum)
-    /*wx.request({
-      url: 'http://47.95.237.94:8001/api/v1/goods/add' + username,
-      data:{
-        name: 
+    wx.request({
+      url: 'http://47.95.237.94:8001/api/v1/goods/add',
+      data: {
+        name: this.globalData.openId,
+        good: {
+          name: this.data.name,
+          pictures: this.data.pictures,
+          desc: this.data.desc,
+          price: this.data.price,
+          phonenum: this.data.phonenum
+        }
+      },
+      method: "POST",
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        console.log(res.data)
       }
-    })*/
+    })
 
     wx.navigateTo({
       url: '../../pages/home/home',
