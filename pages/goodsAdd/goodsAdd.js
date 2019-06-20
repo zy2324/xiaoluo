@@ -70,19 +70,19 @@ Page({
     wx.request({
       url: 'http://47.95.237.94:8001/api/v1/goods/add',
       data: {
-        name: this.globalData.openId,
-        good: {
+        openId: app.globalData.openId,
+        goods: {
           name: this.data.name,
           pictures: this.data.pictures,
           desc: this.data.desc,
-          price: this.data.price,
+          price: parseFloat(this.data.price),
           phonenum: this.data.phonenum
         }
       },
-      method: "POST",
       header: {
         'content-type': 'application/json'
       },
+      method: "POST",
       success: function (res) {
         console.log(res.data)
       }
