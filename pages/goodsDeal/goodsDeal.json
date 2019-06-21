@@ -1,0 +1,16 @@
+{
+  "navigationBarTitleText": "小洛市场",
+  "usingComponents": {
+    "van-card": "../../vant/dist/card/index",
+    "van-tag": "../../vant/dist/tag/index",
+    "van-button": "../../vant/dist/button/index",
+    "van-tabbar": "../../vant/dist/tabbar/index",
+    "van-tabbar-item": "../../vant/dist/tabbar-item/index",
+    "van-field": "../../vant/dist/field/index",
+    "van-col": "../../vant/dist/col/index",
+    "van-row": "../../vant/dist/row/index",
+    "van-cell": "../../vant/dist/cell/index",
+    "van-cell-group": "../../vant/dist/cell-group/index",
+    "van-submit-bar": "../../vant/dist/submit-bar/index"
+  }
+}

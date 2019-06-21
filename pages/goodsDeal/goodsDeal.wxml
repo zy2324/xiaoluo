@@ -1,0 +1,24 @@
+<view>
+  <van-cell-group>
+    <van-cell title="{{name}}" value="{{price}}元" label="{{short}}" />
+
+  </van-cell-group>
+</view>
+<demo-block title="自定义类型">
+  <van-cell-group>
+    <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+      <van-field value="{{date}}" label="交易时间" placeholder="选择日期" />
+    </picker>
+
+    <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindTimeChange">
+      <van-field value="{{time}}" label="具体时间" placeholder="选择时间" />
+    </picker>
+
+    <van-field value="" label="交易地点" placeholder="范围：商州区" />
+    <van-field value="" label="联系方式" placeholder="便于联系" />
+  </van-cell-group>
+</demo-block>
+
+<view class='footer' style="position:fixed; bottom:0;width: 750rpx;">
+  <van-submit-bar price="{{price}}" button-text="确认支付" bind:submit="onClickButton" custom-class="van-submit-bar" safe-area-inset-bottom="{{ false }}" />
+</view>

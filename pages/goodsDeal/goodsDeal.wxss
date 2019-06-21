@@ -1,0 +1,3 @@
+.van-submit-bar {
+  position: relative !important;
+}

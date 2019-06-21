@@ -34,7 +34,7 @@ VantComponent({
             return typeof this.data.price === 'number';
         },
         priceStr() {
-            return (this.data.price / 100).toFixed(this.data.decimalLength);
+            return (this.data.price / 1).toFixed(this.data.decimalLength);
         },
         tipStr() {
             const { tip } = this.data;

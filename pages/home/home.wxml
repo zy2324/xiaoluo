@@ -1,12 +1,13 @@
-<demo-block title="高级用法" wx:for="{{goods}}">
-  <van-card price="{{item.price}}" desc="{{item.desc}}" title="{{item.name}}" thumb="{{ item.pictures[0] }}">
+<view wx:for="{{goods}}">
+  <van-card price="{{item.price}}" desc="{{item.short}}" title="{{item.name}}" thumb="{{ item.pictures[0] }}">
     <view slot="footer" class="van-card__footer">
+      <navigator url='/pages/goodsDetail/goodsDetail?title=goodsDetail&gid={{item.gid}}' open-type='navigate' hover-class='none'>
       <van-button size="mini" round custom-class="button">详情</van-button>
-      <van-button size="mini" round>收藏</van-button>
+      </navigator>
     </view>
   </van-card>
-</demo-block>
-<demo-block title="基础用法">
+</view>
+<block title="基础用法">
   <van-tabbar active="{{ active }}" custom-class="tabbar" safe-area-inset-bottom="{{ false }}" bind:change="onChange">
     <van-tabbar-item icon="home-o">交易市场</van-tabbar-item>
     <van-tabbar-item icon="friends-o" info="">个人中心</van-tabbar-item>
@@ -14,4 +15,4 @@
     <van-tabbar-item icon="add-o" info="" bindtap="goodsAdd">发布物品</van-tabbar-item>
 
   </van-tabbar>
-</demo-block>
+</block>

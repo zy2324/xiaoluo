@@ -3,6 +3,7 @@ const app = getApp()
 Page({
   data: {
     name: '',
+    short: '',
     desc: '',
     price: '',
     phonenum: '',
@@ -14,6 +15,13 @@ Page({
       name: e.detail.value
     })
   },
+
+  shortChange: function (e) {
+    this.setData({
+      short: e.detail.value
+    })
+  },
+
 
   descChange: function(e) {
     this.setData({
@@ -64,6 +72,12 @@ Page({
     })
   },
 
+  backToHome: function(){
+    wx.navigateTo({
+      url: '../../pages/home/home'
+    })
+  },
+
   addToAgent: function() {
     console.log(app.globalData.userInfo.nickName, app.globalData.userInfo.avatarUrl, app.globalData.openId)
     console.log("add:", this.data.name, this.data.desc, this.data.price, this.data.phonenum)
@@ -74,9 +88,11 @@ Page({
         goods: {
           name: this.data.name,
           pictures: this.data.pictures,
+          short: this.data.short,
           desc: this.data.desc,
           price: parseFloat(this.data.price),
-          phonenum: this.data.phonenum
+          phonenum: this.data.phonenum,
+          state: '1'
         }
       },
       header: {
