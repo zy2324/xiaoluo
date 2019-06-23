@@ -11,6 +11,7 @@
     "van-row": "../../vant/dist/row/index",
     "van-cell": "../../vant/dist/cell/index",
     "van-cell-group": "../../vant/dist/cell-group/index",
-    "van-submit-bar": "../../vant/dist/submit-bar/index"
+    "van-submit-bar": "../../vant/dist/submit-bar/index",
+    "van-dialog": "../../vant/dist/dialog/index"
   }
 }
