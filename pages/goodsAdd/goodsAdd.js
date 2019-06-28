@@ -92,7 +92,8 @@ Page({
           desc: this.data.desc,
           price: parseFloat(this.data.price),
           phonenum: this.data.phonenum,
-          state: '1'
+          state: '1',
+          owneropenId: app.globalData.openId
         }
       },
       header: {

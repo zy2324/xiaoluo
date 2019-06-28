@@ -6,11 +6,11 @@
 <demo-block title="自定义类型">
   <van-cell-group>
     <picker mode="date" value="{{date}}" start="2019-06-01" end="2022-12-01" bindchange="bindDateChange">
-      <van-field value="{{date}}" label="交易时间"/>
+      <van-field value="{{date}}" label="交易时间" />
     </picker>
 
     <picker mode="time" value="{{time}}" start="08:00" end="20:00" bindchange="bindTimeChange">
-      <van-field value="{{time}}" label="具体时间"/>
+      <van-field value="{{time}}" label="具体时间" />
     </picker>
 
     <van-field value="{{dealsie}}" label="交易地点" bind:blur="dealsiteChange" />
@@ -20,24 +20,10 @@
 
 <view class='footer' style="position:fixed; bottom:0;width: 750rpx;">
 
-<demo-block title="组件调用" padding>
-  <van-submit-bar price="{{price}}" button-text="确认支付" bind:submit="showVia" custom-class="van-submit-bar" safe-area-inset-bottom="false" />
-  <form bindsubmit="formSubmit" report-submit="true">
-  <van-dialog
-    use-slot
-    show="{{ show }}"
-    show-cancel-button
-    bind:close="onClose"
-    confirm-button-open-type="pushdealok"
-    bind:submit="pushdealok"
-  >
-    <image
-      class="demo-image"
-      src="../../image/mycost.png" bindtap="handleImagePreview"
-    />
-    点击二维码长按识别，向管理员进行支付
-  </van-dialog>
-  </form>
+  <demo-block title="组件调用" padding>
+    <form bindsubmit="makeDeal" report-submit="true">
+      <button form-type="submit">确认支付：{{price}}￥</button>
+    </form>
   </demo-block>
 </view>
 <van-dialog id="van-dialog" />

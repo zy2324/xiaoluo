@@ -9,6 +9,7 @@ Page({
     date: '',
     time: '',
     buyerphonenum: '',
+    buyeropenId: '',
     dealsit: '',
     show: false,
     via: ['http://a1.qpic.cn/psb?/V108803N2OnUxr/vvGx*nGekiHIYe8Q*TOH177u1Rb4EsgMNCXfiXgTSX4!/b/dMAAAAAAAAAA&ek=1&kp=1&pt=0&bo=OATJBQAAAAARF9A!&tl=3&vu']
@@ -40,30 +41,9 @@ Page({
     })
   },
 
-  handleImagePreview(e) {
-    const idx = e.target.dataset.idx
-    const images = this.data.via
-    wx.previewImage({
-      current: images[idx],  //当前预览的图片
-      urls: images,  //所有要预览的图片
-    })
-  },
 
-  showVia: function() {
-    this.setData({ show: true });
-  },
-
-  pushdealok: function() {
-
-  },
-
-  formSubmit: function(){
-
-  },
-
-  makeDeal: function() {
+  makeDeal: function(e) {
     //支付接口，并确认支付是否成功
-
 
 
     //支付成功，则将新增的数据传入后端
@@ -76,6 +56,7 @@ Page({
         buyerphonenum: this.data.buyerphonenum,
         dealsite: this.data.dealsite,
         state: "2",
+        buyeropenId: app.globalData.openId
       },
       header: {
         'content-type': 'application/json'
@@ -84,9 +65,21 @@ Page({
       success: function(res) {
         console.log(res.data)
       }
-    })
+    }),
 
     //成功后，推送消息
+    wx.request({
+      url: 'http://47.95.237.94:8001/api/v1/goods/pushinfo',
+      data: {
+        formId: e.detail.formId,
+        gid: this.data.gid
+      },
+      method: 'POST',
+      success: function (res) {
+        console.log(res)
+      }
+    })
+
   },
 
   onLoad: function(options) {
