@@ -7,6 +7,13 @@ Page({
       url: '../../pages/goodsAdd/goodsAdd'
     })
   },
+
+  mycenter: function () {
+    wx.navigateTo({
+      url: '../../pages/mycenter/mycenter'
+    })
+  },
+
   onLoad: function() {
     var self = this;
     wx.request({
