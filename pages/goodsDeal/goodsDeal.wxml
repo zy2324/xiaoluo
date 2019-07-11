@@ -6,15 +6,15 @@
 <demo-block title="自定义类型">
   <van-cell-group>
     <picker mode="date" value="{{date}}" start="2019-06-01" end="2022-12-01" bindchange="bindDateChange">
-      <van-field value="{{date}}" label="交易时间" />
+      <van-field value="{{date}}" label="交易时间" placeholder="选择日期" />
     </picker>
 
     <picker mode="time" value="{{time}}" start="08:00" end="20:00" bindchange="bindTimeChange">
-      <van-field value="{{time}}" label="具体时间" />
+      <van-field value="{{time}}" label="具体时间" placeholder="选择时间" />
     </picker>
 
-    <van-field value="{{dealsie}}" label="交易地点" bind:blur="dealsiteChange" />
-    <van-field value="{{buyerphonenum}}" label="联系方式" bind:blur="buyerChange" />
+    <van-field value="{{dealsie}}" label="交易地点" placeholder="商州区内" bind:blur="dealsiteChange" />
+    <van-field value="{{buyerphonenum}}" label="联系方式" placeholder="便于联系" bind:blur="buyerChange" />
   </van-cell-group>
 </demo-block>
 

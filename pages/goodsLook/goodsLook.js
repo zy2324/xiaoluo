@@ -20,16 +20,15 @@ Page({
     })
   },
 
-  onTodeal: function(e) {
-    var gid = e.currentTarget.dataset.gid
+  onToback: function() {
     wx.navigateTo({
-      url: '../../pages/goodsDeal/goodsDeal?gid=' + gid
+      url: '../../pages/mycenter/mycenter'
     })
   },
 
-  onToback: function() {
+  onEdit: function() {
     wx.navigateTo({
-      url: '../../pages/home/home'
+      url: '../../pages/goodsEdit/goodsEdit?gid=' + this.data.gid,
     })
   },
 

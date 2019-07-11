@@ -6,7 +6,10 @@
     "pages/goodsAdd/goodsAdd",
     "pages/goodsDetail/goodsDetail",
     "pages/goodsDeal/goodsDeal",
-    "pages/mycenter/mycenter"
+    "pages/mycenter/mycenter",
+    "pages/goodsLook/goodsLook",
+    "pages/goodsEdit/goodsEdit",
+    "pages/goodsDealok/goodsDealok"
   ],
   "window": {
     "backgroundTextStyle": "light",

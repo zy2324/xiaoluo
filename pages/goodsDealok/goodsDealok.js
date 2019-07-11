@@ -8,7 +8,10 @@ Page({
     short: '',
     phonenum: '',
     pictures: [],
-    gid: ''
+    gid: '',
+    dealtime: '',
+    dealsite: '',
+    buyerphonenum: ''
   },
 
   handleImagePreview(e) {
@@ -20,16 +23,10 @@ Page({
     })
   },
 
-  onTodeal: function(e) {
-    var gid = e.currentTarget.dataset.gid
-    wx.navigateTo({
-      url: '../../pages/goodsDeal/goodsDeal?gid=' + gid
-    })
-  },
 
   onToback: function() {
     wx.navigateTo({
-      url: '../../pages/home/home'
+      url: '../../pages/mycenter/mycenter'
     })
   },
 
@@ -51,7 +48,10 @@ Page({
           price: res.data.price,
           phonenum: res.data.phonenum,
           pictures: res.data.pictures,
-          gid: res.data.gid
+          gid: res.data.gid,
+          dealtime: res.data.dealtime,
+          dealsite: res.data.dealsite,
+          buyerphonenum: res.data.buyerphonenum
         })
       }
     })

@@ -7,3 +7,7 @@
   padding: 25px 20px 0;
   box-sizing: border-box;
 }
+
+.van-card__footer {
+  margin-bottom: 22px;
+}

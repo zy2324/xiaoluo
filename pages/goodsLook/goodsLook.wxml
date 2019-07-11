@@ -18,8 +18,7 @@
 
 <view class='footer' style="position:fixed; bottom:0;width: 750rpx;">
   <van-goods-action custom-class="goods-action">
-    <van-goods-action-button text="立即购买" data-gid="{{gid}}" bind:click="onTodeal" />
-    <van-goods-action-button text="收藏" type="warning" bind:click="onTocollect" />
+    <van-goods-action-button text="修改" bind:click="onEdit" />
     <van-goods-action-button type="palin" text="返回" bind:click="onToback" />
   </van-goods-action>
 </view>

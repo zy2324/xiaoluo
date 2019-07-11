@@ -8,9 +8,17 @@ Page({
     })
   },
 
-  mycenter: function () {
+  mycenter: function() {
     wx.navigateTo({
       url: '../../pages/mycenter/mycenter'
+    })
+  },
+
+  goodsdetail: function(e) {
+    var gid = e.currentTarget.dataset.gid
+    console.log(gid)
+    wx.navigateTo({
+      url: '../../pages/goodsDetail/goodsDetail?gid=' + gid
     })
   },
 

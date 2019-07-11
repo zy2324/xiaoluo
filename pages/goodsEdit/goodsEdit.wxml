@@ -1,24 +1,24 @@
 <demo-block title="自定义类型">
   <van-cell-group>
-    <van-field value="{{ name }}" label="物品" placeholder="请输入" clearable bind:blur="nameChange" />
+    <van-field value="{{ name }}" label="物品" clearable bind:blur="nameChange" />
   </van-cell-group>
   <van-cell-group>
-    <van-field value="{{ short }}" label="简述" type="textarea" placeholder="大致简述" rows="1" bind:blur="shortChange" />
+    <van-field value="{{ short }}" label="简述" type="textarea" rows="1" bind:blur="shortChange" />
   </van-cell-group>
   <van-cell-group>
-    <van-field value="{{ desc }}" label="详情" type="textarea" placeholder="具体详情" rows="1" bind:blur="descChange" />
+    <van-field value="{{ desc }}" label="详情" type="textarea" rows="1" bind:blur="descChange" />
   </van-cell-group>
   <van-cell-group>
-    <van-field value="{{ price }}" label="价格" placeholder="自定义" clearable bind:blur="priceChange" />
+    <van-field value="{{ price }}" label="价格" clearable bind:blur="priceChange" />
   </van-cell-group>
   <van-cell-group>
-    <van-field value="{{ phonenum }}" label="手机号" placeholder="交易完成后联系" clearable bind:blur="phoneChange" />
+    <van-field value="{{ phonenum }}" label="手机号" clearable bind:blur="phoneChange" />
   </van-cell-group>
 </demo-block>
 
 <demo-block title="基础用法">
   <van-tabbar active="{{ active }}" custom-class="tabbar" safe-area-inset-bottom="{{ false }}" bind:change="onChange">
-    <van-tabbar-item icon="success" bindtap="addToAgent">发布</van-tabbar-item>
+    <van-tabbar-item icon="success" bindtap="editToAgent">修改</van-tabbar-item>
     <van-tabbar-item icon="cross" bindtap="backToHome">返回</van-tabbar-item>
 
   </van-tabbar>

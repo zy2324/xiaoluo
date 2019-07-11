@@ -3,11 +3,12 @@ const app = getApp()
 Page({
   data: {
     name: '',
-    short: '',
     desc: '',
     price: '',
+    short: '',
     phonenum: '',
-    pictures: []
+    pictures: [],
+    gid: ''
   },
 
   nameChange: function(e) {
@@ -73,40 +74,63 @@ Page({
   },
 
   backToHome: function() {
-    wx.navigateTo({
-      url: '../../pages/home/home'
+    wx.navigateBack({
+      delta: 1
     })
   },
 
-  addToAgent: function() {
-    console.log(app.globalData.userInfo.nickName, app.globalData.userInfo.avatarUrl, app.globalData.openId)
+  editToAgent: function() {
     console.log("add:", this.data.name, this.data.desc, this.data.price, this.data.phonenum)
     wx.request({
-      url: 'http://47.95.237.94:8001/api/v1/goods/add',
-      data: {
-        openId: app.globalData.openId,
-        goods: {
-          name: this.data.name,
-          pictures: this.data.pictures,
-          short: this.data.short,
-          desc: this.data.desc,
-          price: parseFloat(this.data.price),
-          phonenum: this.data.phonenum,
-          state: '1',
-          owneropenId: app.globalData.openId
+        url: 'http://47.95.237.94:8001/api/v1/goods/edit',
+        data: {
+          openId: app.globalData.openId,
+          goods: {
+            gid: this.data.gid,
+            name: this.data.name,
+            pictures: this.data.pictures,
+            short: this.data.short,
+            desc: this.data.desc,
+            price: parseFloat(this.data.price),
+            phonenum: this.data.phonenum,
+            state: '1',
+            owneropenId: app.globalData.openId
+          }
+        },
+        header: {
+          'content-type': 'application/json'
+        },
+        method: "POST",
+        success: function(res) {
+          console.log(res.data)
         }
-      },
-      header: {
-        'content-type': 'application/json'
-      },
-      method: "POST",
-      success: function(res) {
-        console.log(res.data)
-      }
-    })
+      }),
 
-    wx.navigateTo({
-      url: '../../pages/home/home',
+      wx.navigateTo({
+        url: '../../pages/goodsLook/goodsLook?gid=' + this.data.gid
+      })
+  },
+
+  onLoad: function(options) {
+    var self = this;
+    wx.request({
+      url: 'http://47.95.237.94:8001/api/v1/goods/' + options.gid + '/detail',
+      method: 'GET',
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        console.log(res.data)
+        self.setData({
+          name: res.data.name,
+          short: res.data.short,
+          desc: res.data.desc,
+          price: res.data.price,
+          phonenum: res.data.phonenum,
+          pictures: res.data.pictures,
+          gid: res.data.gid
+        })
+      }
     })
   }
 });
