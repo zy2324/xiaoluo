@@ -2,7 +2,7 @@
 
 .userinfo {
   display: flex;
-  flex-direction: column;
+  flex-direction:column;
   align-items: center;
 }
 
@@ -17,6 +17,29 @@
   color: #aaa;
 }
 
-.usermotto {
-  margin-top: 200px;
+.desc {
+  margin-top: 100px;
+  align-items: center;
+  text-align: center;
+  
+}
+
+.bsite{
+  margin-top: 10x;
+  align-items: center;
+  text-align: center;
+}
+
+.hello {
+  font-size: 30rpx;
+  align-items: center;
+  text-align: center;
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  position:fixed; 
+  background-size:100% 100%;
+  z-index: -1;
 }

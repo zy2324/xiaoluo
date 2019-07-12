@@ -12,10 +12,10 @@
   <van-panel title="{{name}}" desc="{{short}}" use-footer-slot>
     <view class="content">{{desc}}</view>
     <view class="content">价格：{{price}}</view>
-    <view class="content">收货人：{{phonenum}}</view>
+    <view class="content">收货人：{{buyerphonenum}}</view>
     <view class="content">交易时间：{{dealtime}}</view>
     <view class="content">交易地点：{{dealsite}}</view>
-    <view class="content">卖家电话：{{buyerphonenum}}</view>
+    <view class="content">卖家电话：{{phonenum}}</view>
   </van-panel>
   <view>
     <text decode="{{true}}"> &ensp;</text>

@@ -77,6 +77,10 @@ Page({
         success: function(res) {
           console.log(res)
         }
+      }),
+
+      wx.navigateTo({
+        url: '../../pages/goodsDealok/goodsDealok?gid=' + this.data.gid
       })
 
   },
