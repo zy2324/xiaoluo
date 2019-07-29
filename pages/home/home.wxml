@@ -15,8 +15,7 @@
   <van-tabbar active="{{ active }}" custom-class="tabbar" safe-area-inset-bottom="{{ false }}" bind:change="onChange">
     <van-tabbar-item icon="home-o">交易市场</van-tabbar-item>
     <van-tabbar-item icon="friends-o" info="" bindtap="mycenter">个人中心</van-tabbar-item>
-
     <van-tabbar-item icon="add-o" info="" bindtap="goodsAdd">发布物品</van-tabbar-item>
-
+    <van-tabbar-item icon="close"><navigator open-type="exit" target="miniProgram">退出小程序</navigator></van-tabbar-item>
   </van-tabbar>
 </block>
