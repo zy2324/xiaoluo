@@ -59,6 +59,30 @@ Page({
       that.onLoad()
   },
 
+  goodsdealquit: function (e) {
+    var that = this
+    var gid = e.currentTarget.dataset.info
+    console.log("------------", gid)
+    wx.request({
+      url: 'https://www.draknesslion.top:8001/api/v1/goods/dealquit',
+      method: 'POST',
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      data: {
+        goodsid: gid,
+        openId: app.globalData.openId
+      },
+      success(res) {
+        console.log(res.data)
+      }
+    }),
+      wx.showToast({
+        title: `取消成功`,
+        icon: 'none'
+      }),
+      that.onLoad()
+  },
 
   onLoad: function() {
     var self = this;

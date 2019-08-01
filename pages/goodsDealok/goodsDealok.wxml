@@ -14,7 +14,8 @@
     <view class="content">交易时间：{{dealtime}}</view>
     <view class="content">交易地点：{{dealsite}}</view>
     <view class="content">卖家电话：{{phonenum}}</view>
-    <view class="content">恭喜达成意向，请及时联系卖家后续交易</view>
+    <view class="content">恭喜达成意向，请及时联系卖家后续交易。</view>
+    <view class="content">若想取消，请在我的交易中操作。</view>
   </van-panel>
   <view>
     <text decode="{{true}}"> &ensp;</text>

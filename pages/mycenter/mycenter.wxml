@@ -6,7 +6,7 @@
           <view slot="footer" class="van-card__footer">
 
             <van-button size="mini" round custom-class="button" bindtap="goodslook" data-gid="{{item.gid}}">查看</van-button>
-            <van-button size="mini" round custom-class="button" bindtap="goodsdel" data-info="{{item.gid}}">删除</van-button>
+            <van-button size="mini" round custom-class="button" bindtap="goodsdel" data-info="{{item.gid}}">立即删除</van-button>
           </view>
 
         </van-card>
@@ -23,7 +23,7 @@
 
             <van-button size="mini" round custom-class="button" bindtap="goodslookDealok" data-gid="{{item.gid}}">查看</van-button>
 
-            <van-button size="mini" round custom-class="button" bindtap="goodsdel" data-info="{{item.gid}}">删除</van-button>
+            <van-button size="mini" round custom-class="button" bindtap="goodsdealquit" data-info="{{item.gid}}">立即取消</van-button>
           </view>
         </van-card>
         <view>
