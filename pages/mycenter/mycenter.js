@@ -39,7 +39,7 @@ Page({
     var gid = e.currentTarget.dataset.info
     console.log("------------", gid)
     wx.request({
-        url: 'http://47.95.237.94:8001/api/v1/goods/delete',
+      url: 'https://www.draknesslion.top:8001/api/v1/goods/delete',
         method: 'POST',
         header: {
           'content-type': 'application/json' // 默认值
@@ -64,7 +64,7 @@ Page({
     var self = this;
 
     wx.request({
-      url: 'http://47.95.237.94:8001/api/v1/goods/' + app.globalData.openId + '/my/list',
+      url: 'https://www.draknesslion.top:8001/api/v1/goods/' + app.globalData.openId + '/my/list',
       method: 'GET',
       header: {
         'content-type': 'application/json' // 默认值

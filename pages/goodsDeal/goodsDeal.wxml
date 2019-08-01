@@ -22,7 +22,7 @@
 
   <demo-block title="组件调用" padding>
     <form bindsubmit="makeDeal" report-submit="true">
-      <button form-type="submit">确认支付：{{price}}￥</button>
+      <button form-type="submit">确认意向：{{price}}￥</button>
     </form>
   </demo-block>
 </view>

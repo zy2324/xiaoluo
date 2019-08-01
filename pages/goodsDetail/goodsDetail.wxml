@@ -12,13 +12,13 @@
   <van-panel title="{{name}}" desc="{{short}}" use-footer-slot>
     <view class="content">{{desc}}</view>
     <view class="content">价格：{{price}}</view>
-    <view class="content">联系卖家：{{phonenum}}</view>
+    <view class="content">卖家联系方式：达成意向后显示</view>
   </van-panel>
 </demo-block>
 
 <view class='footer' style="position:fixed; bottom:0;width: 750rpx;">
   <van-goods-action custom-class="goods-action">
-    <van-goods-action-button text="立即购买" data-gid="{{gid}}" bind:click="onTodeal" />
+    <van-goods-action-button text="确认购买意向" data-gid="{{gid}}" bind:click="onTodeal" />
     <van-goods-action-button type="palin" text="返回" bind:click="onToback" />
   </van-goods-action>
 </view>

@@ -10,12 +10,11 @@
 
 <demo-block title="高级用法">
   <van-panel title="{{name}}" desc="{{short}}" use-footer-slot>
-    <view class="content">{{desc}}</view>
     <view class="content">价格：{{price}}</view>
-    <view class="content">收货人：{{buyerphonenum}}</view>
     <view class="content">交易时间：{{dealtime}}</view>
     <view class="content">交易地点：{{dealsite}}</view>
     <view class="content">卖家电话：{{phonenum}}</view>
+    <view class="content">恭喜达成意向，请及时联系卖家后续交易</view>
   </van-panel>
   <view>
     <text decode="{{true}}"> &ensp;</text>
