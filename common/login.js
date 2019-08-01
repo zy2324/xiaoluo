@@ -14,7 +14,7 @@ var login = {
 
     function setUserInfo() {
       wx.request({
-        url: 'http://47.95.237.94:8001/api/v1/goods/user/login',
+        url: 'https://www.draknesslion.top:8001/api/v1/goods/user/login',
         data: {
           encryptedData: resData.encryptedData,
           iv: resData.iv
@@ -38,7 +38,7 @@ var login = {
       success: res => {
         if (res.code) {
           wx.request({
-            url: 'http://47.95.237.94:8001/api/v1/goods/user/id',
+            url: 'https://www.draknesslion.top:8001/api/v1/goods/user/id',
             data: {
               code: res.code
             },

@@ -82,7 +82,7 @@ Page({
     console.log(app.globalData.userInfo.nickName, app.globalData.userInfo.avatarUrl, app.globalData.openId)
     console.log("add:", this.data.name, this.data.desc, this.data.price, this.data.phonenum)
     wx.request({
-      url: 'http://47.95.237.94:8001/api/v1/goods/add',
+      url: 'https://www.draknesslion.top:8001/api/v1/goods/add',
       data: {
         openId: app.globalData.openId,
         goods: {

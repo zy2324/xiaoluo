@@ -34,7 +34,7 @@ Page({
   onLoad: function(options) {
     var self = this;
     wx.request({
-      url: 'http://47.95.237.94:8001/api/v1/goods/' + options.gid + '/detail',
+      url: 'https://www.draknesslion.top:8001/api/v1/goods/' + options.gid + '/detail',
       method: 'GET',
       header: {
         'content-type': 'application/json' // 默认值

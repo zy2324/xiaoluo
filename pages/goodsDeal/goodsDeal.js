@@ -47,7 +47,7 @@ Page({
 
     //支付成功，则将新增的数据传入后端
     wx.request({
-        url: 'http://47.95.237.94:8001/api/v1/goods/dealok',
+        url: 'https://www.draknesslion.top:8001/api/v1/goods/dealok',
         data: {
           openId: app.globalData.openId,
           gid: this.data.gid,
@@ -68,7 +68,7 @@ Page({
 
       //成功后，推送消息
       wx.request({
-        url: 'http://47.95.237.94:8001/api/v1/goods/pushinfo',
+        url: 'https://www.draknesslion.top:8001/api/v1/goods/pushinfo',
         data: {
           formId: e.detail.formId,
           gid: this.data.gid
@@ -88,7 +88,7 @@ Page({
   onLoad: function(options) {
     var self = this;
     wx.request({
-      url: 'http://47.95.237.94:8001/api/v1/goods/' + options.gid + '/detail',
+      url: 'https://www.draknesslion.top:8001/api/v1/goods/' + options.gid + '/detail',
       method: 'GET',
       header: {
         'content-type': 'application/json' // 默认值
