@@ -47,7 +47,25 @@ Page({
       sizeType: ['original', 'compressed'],
       sourceType: ['album', 'camera'],
       success: res => {
-        const images = this.data.pictures.concat(res.tempFilePaths)
+        const images = this.data.pictures.concat(res.tempFilePaths);
+        var i;
+        for (i=0; i< images.length; i++){
+          console.log(images[i])
+          wx.uploadFile({
+            url: 'https://www.draknesslion.top:8001/api/v1/goods/upload',
+            filePath: images[i],
+            name: 'picture',
+            header: {
+              "Content-Type": "multipart/form-data"
+            },
+            formData:{
+            },
+            success (res){
+              var aa = res.map(JSON.parse(res.data).url)
+             console.log("upload pic", aa) 
+            }
+          })
+        }
         this.setData({
           pictures: images
         })
