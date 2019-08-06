@@ -8,7 +8,8 @@ Page({
     short: '',
     phonenum: '',
     pictures: [],
-    gid: ''
+    gid: '',
+    ppp: []
   },
 
   nameChange: function(e) {
@@ -48,10 +49,32 @@ Page({
       sizeType: ['original', 'compressed'],
       sourceType: ['album', 'camera'],
       success: res => {
-        const images = this.data.pictures.concat(res.tempFilePaths)
-        this.setData({
-          pictures: images
-        })
+        const images = this.data.pictures.concat(res.tempFilePaths);
+        var i;
+        var pics = [];
+        for (i = 0; i < images.length; i++) {
+          console.log(images[i])
+          wx.uploadFile({
+            url: 'https://www.draknesslion.top:8001/api/v1/goods/upload',
+            filePath: images[i],
+            name: 'picture',
+            header: {
+              "Content-Type": "multipart/form-data"
+            },
+            formData: {
+              'imgIndex': i
+            },
+            success(res) {
+              var data = JSON.parse(res.data);
+              console.log("upload pic", data.pic)
+              pics.push(data.pic)
+              console.log("pics", pics)
+              that.setData({
+                ppp: pics
+              })
+            }
+          })
+        }
       },
     })
   },
@@ -88,7 +111,7 @@ Page({
           goods: {
             gid: this.data.gid,
             name: this.data.name,
-            pictures: this.data.pictures,
+            pictures: this.data.ppp,
             short: this.data.short,
             desc: this.data.desc,
             price: parseFloat(this.data.price),

@@ -1,6 +1,7 @@
 Page({
   data: {
-    goods: []
+    goods: [],
+    user: ''
   },
   goodsAdd: function() {
     wx.navigateTo({

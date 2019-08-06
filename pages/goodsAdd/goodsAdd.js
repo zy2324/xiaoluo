@@ -7,7 +7,8 @@ Page({
     desc: '',
     price: '',
     phonenum: '',
-    pictures: []
+    pictures: [],
+    ppp: [],
   },
 
   nameChange: function(e) {
@@ -41,15 +42,20 @@ Page({
     })
   },
 
-  addPicture(e) {
+  addPicture: function(e) {
+    var that = this;
     wx.chooseImage({
       count: 4,
       sizeType: ['original', 'compressed'],
       sourceType: ['album', 'camera'],
       success: res => {
         const images = this.data.pictures.concat(res.tempFilePaths);
+        that.setData({
+          pictures: images
+        })
         var i;
-        for (i=0; i< images.length; i++){
+        var pics = [];
+        for (i = 0; i < images.length; i++) {
           console.log(images[i])
           wx.uploadFile({
             url: 'https://www.draknesslion.top:8001/api/v1/goods/upload',
@@ -58,17 +64,20 @@ Page({
             header: {
               "Content-Type": "multipart/form-data"
             },
-            formData:{
+            formData: {
+              'imgIndex': i
             },
-            success (res){
-              var aa = res.map(JSON.parse(res.data).url)
-             console.log("upload pic", aa) 
+            success(res) {
+              var data = JSON.parse(res.data);
+              console.log("upload pic", data.pic)
+              pics.push(data.pic)
+              console.log("pics", pics)     
+              that.setData({
+                ppp: pics
+              })
             }
           })
         }
-        this.setData({
-          pictures: images
-        })
       },
     })
   },
@@ -105,7 +114,7 @@ Page({
         openId: app.globalData.openId,
         goods: {
           name: this.data.name,
-          pictures: this.data.pictures,
+          pictures: this.data.ppp,
           short: this.data.short,
           desc: this.data.desc,
           price: parseFloat(this.data.price),

@@ -3,7 +3,7 @@
     <van-field value="{{ name }}" label="物品" placeholder="请输入" clearable bind:blur="nameChange" />
   </van-cell-group>
   <van-cell-group>
-    <van-field value="{{ short }}" label="简述" type="textarea" placeholder="大致简述" rows="1" bind:blur="shortChange" />
+    <van-field value="{{ short }}" label="简述" type="textarea" placeholder="大致简述分类用途等" rows="1" bind:blur="shortChange" />
   </van-cell-group>
   <van-cell-group>
     <van-field value="{{ desc }}" label="详情" type="textarea" placeholder="具体详情" rows="1" bind:blur="descChange" />

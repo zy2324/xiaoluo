@@ -2,7 +2,7 @@
   <swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000">
     <block wx:for="{{pictures}}">
       <swiper-item>
-        <image src="{{item}}" class="slide-image" mode='aspectFit' bindtap="handleImagePreview" />
+        <image src="https://www.draknesslion.top:8001/static/img/{{item}}" class="slide-image" mode='aspectFit' bindtap="handleImagePreview" />
       </swiper-item>
     </block>
   </swiper>
@@ -12,7 +12,8 @@
   <van-panel title="{{name}}" desc="{{short}}" use-footer-slot>
     <view class="content">{{desc}}</view>
     <view class="content">价格：{{price}}</view>
-    <view class="content">卖家联系方式：达成意向后显示</view>
+    <view class="content">发布者：{{user}}</view>
+    <view class="content">发布者联系方式：达成意向后显示</view>
   </van-panel>
 </demo-block>
 

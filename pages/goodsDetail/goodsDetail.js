@@ -8,7 +8,8 @@ Page({
     short: '',
     phonenum: '',
     pictures: [],
-    gid: ''
+    gid: '',
+    user: ''
   },
 
   handleImagePreview(e) {
@@ -51,7 +52,8 @@ Page({
           price: res.data.price,
           phonenum: res.data.phonenum,
           pictures: res.data.pictures,
-          gid: res.data.gid
+          gid: res.data.gid,
+          user: res.data.user
         })
       }
     })

@@ -2,7 +2,7 @@
   <swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000">
     <block wx:for="{{pictures}}">
       <swiper-item>
-        <image src="{{item}}" class="slide-image" mode='aspectFit' bindtap="handleImagePreview" />
+        <image src="https://www.draknesslion.top:8001/static/img/{{item}}" class="slide-image" mode='aspectFit' bindtap="handleImagePreview" />
       </swiper-item>
     </block>
   </swiper>

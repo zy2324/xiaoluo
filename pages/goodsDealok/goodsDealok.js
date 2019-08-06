@@ -11,7 +11,8 @@ Page({
     gid: '',
     dealtime: '',
     dealsite: '',
-    buyerphonenum: ''
+    buyerphonenum: '',
+    user: ''
   },
 
   handleImagePreview(e) {
@@ -51,7 +52,8 @@ Page({
           gid: res.data.gid,
           dealtime: res.data.dealtime,
           dealsite: res.data.dealsite,
-          buyerphonenum: res.data.buyerphonenum
+          buyerphonenum: res.data.buyerphonenum,
+          user: res.data.user
         })
       }
     })

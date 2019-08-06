@@ -1,6 +1,6 @@
 <demo-block title="基础用法">
   <view wx:for="{{goods}}">
-    <van-card price="{{item.price}}" desc="{{item.short}}" title="{{item.name}}" thumb="{{ item.pictures[0] }}">
+    <van-card price="{{item.price}}" desc="{{item.short}}" title="{{item.name}}" user="发布者:{{item.user}}" thumb="https://www.draknesslion.top:8001/static/img/{{ item.pictures[0] }}">
       <view slot="footer" class="van-card__footer">
         <van-button size="mini" round custom-class="button" bindtap="goodsdetail" data-gid="{{item.gid}}">详情</van-button>
       </view>
