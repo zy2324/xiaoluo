@@ -5,6 +5,7 @@
     "van-tag": "../../vant/dist/tag/index",
     "van-button": "../../vant/dist/button/index",
     "van-tabbar": "../../vant/dist/tabbar/index",
-    "van-tabbar-item": "../../vant/dist/tabbar-item/index"
+    "van-tabbar-item": "../../vant/dist/tabbar-item/index",
+    "van-notice-bar": "../../vant/dist/notice-bar/index"
   }
 }

@@ -1,3 +1,6 @@
+<demo-block title="禁用滚动">
+  <van-notice-bar scrollable="{{ false }}" text="欢迎浏览，出现点击无反应，请多次点击或退出重进" />
+</demo-block>
 <demo-block title="基础用法">
   <view wx:for="{{goods}}">
     <van-card price="{{item.price}}" desc="{{item.short}}" title="{{item.name}}" user="发布者:{{item.user}}" thumb="https://www.draknesslion.top:8001/static/img/{{ item.pictures[0] }}">

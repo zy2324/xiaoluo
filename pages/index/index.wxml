@@ -1,6 +1,6 @@
 <!--index.wxml-->
 
-<image class='background' src="../../pics/background.jpg" mode="aspectFill"></image>
+<!--<image class='background' src="../../pics/background.jpg" mode="aspectFill"></image>-->
   <view class="userinfo"></view>
   <view class="desc">
   <van-button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </van-button>
@@ -18,7 +18,7 @@
   管理员不参与其中，请知晓
   管理员信息透明化，见底部
   创建良好平台环境，禁止违法违纪行为
-  <text class="key">PS:第一次登录，请获取头像昵称</text>
+  <text class="key">PS:第一次登录，请获取头像昵称！！！</text>
   </text>
   </view>
   <view>
